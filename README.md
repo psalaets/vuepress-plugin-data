@@ -16,7 +16,15 @@ yarn add -D vuepress-plugin-data
 
 ### 1. Specify the data
 
-Specify the data as an array of key/value pairs in the plugin options.
+Specify the data in the plugin options as an array of key/value pairs.
+
+The value can be any of
+
+- json serializable value
+- function that returns a json serializable value
+- function that returns a Promise that resolves to a json serializable value
+- async function that returns a json serializable value
+- Promise that resolves to a json serializable value
 
 ```js
 // .vuepress/config.js
@@ -26,19 +34,19 @@ module.exports  {
       data: [
         {
           key: 'count',
-          // can be static value
+          // static value
           value: 5
         },
         {
           key: 'rando',
-          // can be function
+          // function
           value() {
             return Math.random();
           }
         },
         {
           key: 'speakers',
-          // can be function that returns Promise
+          // function that returns Promise
           value() {
             return axios.get('https://example.org/api/speakers')
               .then(response => response.data);
@@ -46,7 +54,7 @@ module.exports  {
         },
         {
           key: 'cities',
-          // can be async function
+          // async function
           async value() {
             return await axios.get('https://example.org/api/cities')
               .then(response => response.data);
@@ -60,7 +68,7 @@ module.exports  {
 
 ### 2. Access the data
 
-Data is exposed using a [global mixin](https://vuejs.org/v2/guide/mixins.html#Global-Mixin):
+Data is injected using a [global mixin](https://vuejs.org/v2/guide/mixins.html#Global-Mixin):
 
 ```js
 Vue.mixin({
@@ -93,7 +101,7 @@ title: My Site
 </ul>
 ```
 
-### 2b. Access data in a component
+### 2b. Access data in a Vue component
 
 ```js
 export default {
@@ -107,7 +115,7 @@ export default {
 
 ## Caveats
 
-- Because the data is part of the js, all data will be eagerly loaded by your site.
+- Because the data is in the initial js bundle, all data is eagerly loaded by your site.
 
 ## License
 

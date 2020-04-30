@@ -12,6 +12,11 @@
     "preintegration-test": "yarn run build-test-site",
     "integration-test": "jest --testPathPattern test/integration"
   },
+  "homepage": "https://github.com/psalaets/vuepress-plugin-data",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psalaets/vuepress-plugin-data.git"
+  },
   "keywords": [
     "vuepress",
     "plugin",
