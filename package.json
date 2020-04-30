@@ -4,12 +4,12 @@
   "description": "Inject external data into a VuePress site",
   "main": "index.js",
   "scripts": {
-    "test": "npm run unit-test && npm run integration-test",
+    "test": "yarn run unit-test && yarn run integration-test",
     "unit-test": "jest --testPathPattern test/unit",
     "clean-test-site": "rimraf test-site/.vuepress/dist",
-    "prebuild-test-site": "npm run clean-test-site",
+    "prebuild-test-site": "yarn run clean-test-site",
     "build-test-site": "vuepress build --no-cache --silent test-site",
-    "preintegration-test": "npm run build-test-site",
+    "preintegration-test": "yarn run build-test-site",
     "integration-test": "jest --testPathPattern test/integration"
   },
   "keywords": [
