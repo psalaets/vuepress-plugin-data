@@ -1,4 +1,4 @@
-const createPlugin = require('../index');
+const createPlugin = require('../../index');
 
 describe('enhanceAppFiles()', () => {
   test('number value', async () => {

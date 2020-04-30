@@ -1,4 +1,4 @@
-const createPlugin = require('../index');
+const createPlugin = require('../../index');
 
 describe('plugin', () => {
   test('identifies itself', () => {
