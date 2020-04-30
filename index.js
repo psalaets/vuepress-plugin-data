@@ -1,6 +1,6 @@
-module.exports = createPlugin;
-
 const PLUGIN_NAME = 'vuepress-plugin-data';
+
+module.exports = createPlugin;
 
 function createPlugin(options) {
   const dataSpecs = options.data;
