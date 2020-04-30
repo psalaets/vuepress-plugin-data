@@ -45,7 +45,7 @@ export default ({ Vue }) => {
   Vue.mixin({
     data() {
       return {
-        data: ${JSON.stringify(dataByKey, null, 2)}
+        vppData: ${JSON.stringify(dataByKey, null, 2)}
       };
     }
   });
