@@ -1,7 +1,7 @@
 {
   "name": "vuepress-plugin-data",
   "version": "1.0.0",
-  "description": "",
+  "description": "Inject external data into a VuePress site",
   "main": "index.js",
   "scripts": {
     "test": "npm run unit-test && npm run integration-test",
