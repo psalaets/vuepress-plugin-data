@@ -76,6 +76,7 @@ module.exports = {
 ### 3. Access the data
 
 <details>
+
 Data is injected using a [global mixin](https://vuejs.org/v2/guide/mixins.html#Global-Mixin):
 
 ```js
@@ -93,7 +94,7 @@ Vue.mixin({
 This means all pages and components can access the data directly.
 </details>
 
-### 3a. Access data in a page
+#### 3a. Access data in a page
 
 ```text
 ---
@@ -110,7 +111,7 @@ title: My Site
 </ul>
 ```
 
-### 3b. Access data in a Vue component
+#### 3b. Access data in a Vue component
 
 ```js
 export default {
