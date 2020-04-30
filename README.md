@@ -75,6 +75,8 @@ module.exports = {
 
 ### 3. Access the data
 
+Your data is accessible in the `vppData` object.
+
 <details>
 
 Data is injected using a [global mixin](https://vuejs.org/v2/guide/mixins.html#Global-Mixin):
@@ -83,7 +85,7 @@ Data is injected using a [global mixin](https://vuejs.org/v2/guide/mixins.html#G
 Vue.mixin({
   data() {
     return {
-      data: {
+      vppData: {
         // Your data will be in here by the keys you specified
       }
     };
@@ -101,11 +103,11 @@ This means all pages and components can access the data directly.
 title: My Site
 ---
 
-- {{data.count}}
-- {{data.rando}}
+- {{vppData.count}}
+- {{vppData.rando}}
 
 <ul>
-  <li v-for="city in data.cities" :key="city.id">
+  <li v-for="city in vppData.cities" :key="city.id">
     {{city.name}}
   </li>
 </ul>
@@ -117,7 +119,7 @@ title: My Site
 export default {
   computed: {
     speakerCount() {
-      return this.data.speakers.length;
+      return this.vppData.speakers.length;
     }
   }
 };
